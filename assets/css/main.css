@@ -87,6 +87,67 @@ h6 {
   font-family: var(--heading-font);
 }
 
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 28px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* 🎨 Change colors here */
+.hire-btn {
+  background-color: #000000;
+  color: #fff;
+  border-radius: 25px;
+  border: 1px solid white;
+}
+.hire-btn:hover {
+  background-color: #ffffff;
+  color:  #100f2c/* Darker Red */
+}
+
+.portfolio-btn {
+  background-color: #ffffff;
+  color:  #100f2c;
+  border-radius: 25px;
+  border: 1px solid white;
+}
+.portfolio-btn:hover {
+  background-color: #000000;
+  color: #fff;
+  border: 1px solid white;   /* Darker Teal */
+}
+
+.id-card {
+  width: 260px;             /* fixed card width */
+  background: #14122c;      /* card background */
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.id-card:hover {
+  transform: translateY(-5px); /* small lift on hover */
+}
+.id-card .profile-img img {
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+}
+
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
