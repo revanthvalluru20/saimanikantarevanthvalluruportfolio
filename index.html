@@ -25,7 +25,7 @@
 
   <!-- Custom: centered modal + backdrop blur + responsive tweaks -->
   <style>
-    /* constrain and center modal nicely */
+    /* constrain and center modal nicely on larger screens */
     .modal-dialog {
       max-width: 900px;
       margin: 1.75rem auto;
@@ -50,19 +50,42 @@
     .experience-item {
       transition: transform .18s ease, box-shadow .18s ease;
     }
+
     .experience-item:focus,
     .experience-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     }
 
-    /* small screens - modal width and spacing */
+    /* HERO buttons: stack on xs, row on sm+; buttons full width on xs for easy tapping */
+    .hero-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    /* We'll use helper classes on each button to control width (see HTML) */
+
+    /* small screens - modal width and centering override */
     @media (max-width: 576px) {
       .modal-dialog {
-        max-width: calc(100% - 1rem);
-        margin: .5rem;
+        /* make dialog fill viewport and use flex centering to guarantee center alignment */
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        pointer-events: none; /* prevent underlying click interaction; content will re-enable */
       }
-      .id-card { padding: 1.2rem; }
+      .modal-content {
+        width: 100%;
+        max-width: 540px; /* keeps content readable on phones */
+        margin: 0 1rem;
+        pointer-events: auto;
+      }
+      .id-card {
+        padding: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -93,8 +116,8 @@
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
 
-        <!-- Experience nav item scrolls to section -->
-        <li><a href="#experience" onclick="scrollToExperience(event)"><i class="bi bi-briefcase navicon"></i> Experience</a></li>
+        <!-- Experience nav item opens modal (change here if you prefer scroll instead) -->
+        <li><a href="#" data-bs-toggle="modal" data-bs-target="#experienceModal"><i class="bi bi-briefcase navicon"></i> Experience</a></li>
 
         <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
@@ -115,11 +138,13 @@
           <span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span>
         </p>
 
-        <div class="hero-buttons d-flex gap-2 flex-wrap">
-          <a href="mailto:sairevanth.valluru@gmail.com" class="btn hire-btn">Hire Me!</a>
-          <a href="#portfolio" class="btn portfolio-btn">Portfolio</a>
-          <!-- quick CTA to jump to Experience -->
-          <button type="button" class="btn btn-outline-light" onclick="scrollToExperience()">Experience</button>
+        <!-- NOTE: buttons use flex-column on xs via utility classes below -->
+        <div class="hero-buttons">
+          <!-- each button: full width on xs, auto width from sm -->
+          <a href="mailto:sairevanth.valluru@gmail.com" class="btn hire-btn w-100 w-sm-auto mb-2 mb-sm-0">Hire Me!</a>
+          <a href="#portfolio" class="btn portfolio-btn w-100 w-sm-auto mb-2 mb-sm-0">Portfolio</a>
+          <!-- Experience opens modal -->
+          <button type="button" class="btn btn-outline-light w-100 w-sm-auto" data-bs-toggle="modal" data-bs-target="#experienceModal">Experience</button>
         </div>
       </div>
     </section>
@@ -176,7 +201,6 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-10">
-            <!-- This card opens the modal -->
             <div class="experience-item p-4 rounded shadow-sm bg-white" role="button" data-bs-toggle="modal" data-bs-target="#experienceModal" style="cursor:pointer;">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <div>
@@ -268,17 +292,17 @@
 
             <h6 class="mt-3">Key highlights</h6>
             <ul>
-              <li><strong>Frontend:</strong> Refactored React components; improved UX, routing & forms.</li>
-              <li><strong>Multilingual:</strong> Azure Translator integration with secure key handling & caching.</li>
+              <li><strong>Frontend:</strong> Refactored React components; improved UX, routing &amp; forms.</li>
+              <li><strong>Multilingual:</strong> Azure Translator integration with secure key handling &amp; caching.</li>
               <li><strong>Payouts:</strong> Payout UI + backend integration with validations and error handling.</li>
-              <li><strong>SSO & Admin:</strong> Enterprise SSO (SAML/OAuth) and Admin Panel features (pagination, filters, bulk actions).</li>
+              <li><strong>SSO &amp; Admin:</strong> Enterprise SSO (SAML/OAuth) and Admin Panel features (pagination, filters, bulk actions).</li>
               <li><strong>Collab:</strong> Defined API contracts, integration checks, and Git/CI practices.</li>
             </ul>
 
-            <h6 class="mt-3">Components & flows</h6>
+            <h6 class="mt-3">Components &amp; flows</h6>
             <ul>
               <li>Reusable form/input components with validation hooks.</li>
-              <li>Payout flow: request → validate → submit → status & polling.</li>
+              <li>Payout flow: request → validate → submit → status &amp; polling.</li>
               <li>Admin lists: server-side pagination + client filters + bulk actions.</li>
             </ul>
 
@@ -286,7 +310,7 @@
             <p>React · JavaScript · Node/Express · MongoDB · Azure Translator · SSO · REST · Git · CI/CD</p>
 
             <h6 class="mt-3">Impact</h6>
-            <p>Increased accessibility (multilingual), enabled enterprise auth, and streamlined admin & payout workflows.</p>
+            <p>Increased accessibility (multilingual), enabled enterprise auth, and streamlined admin &amp; payout workflows.</p>
           </div>
 
           <div class="modal-footer">
@@ -319,26 +343,16 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Smooth-scroll to Experience (used by navbar / hero button) -->
+  <!-- Small JS: accessibility helper to focus modal content when opened -->
   <script>
-    function scrollToExperience(e) {
-      if (e && e.preventDefault) e.preventDefault();
-      const el = document.getElementById('experience');
-      if (!el) return;
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => {
-        el.setAttribute('tabindex', '-1');
-        el.focus({ preventScroll: true });
-      }, 400);
+    const experienceModalEl = document.getElementById('experienceModal');
+    if (experienceModalEl) {
+      experienceModalEl.addEventListener('shown.bs.modal', () => {
+        // focus modal content for keyboard users
+        const body = experienceModalEl.querySelector('.modal-body');
+        if (body) body.focus();
+      });
     }
-
-    // Optional: keyboard accessibility for the preview card
-    document.addEventListener('keydown', function (ev) {
-      const active = document.activeElement;
-      if (ev.key === 'Enter' && active && active.classList.contains('experience-item')) {
-        active.querySelector('[data-bs-toggle="modal"]')?.click();
-      }
-    });
   </script>
 
   <!-- Main JS File -->
