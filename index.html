@@ -54,6 +54,12 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <!-- Experience: opens fullscreen modal -->
+        <li>
+          <a href="#experience" data-bs-toggle="modal" data-bs-target="#experienceModal">
+            <i class="bi bi-briefcase navicon"></i> Experience
+          </a>
+        </li>
         <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
       </ul>
@@ -140,6 +146,40 @@
       </div>
 
     </section><!-- /About Section -->
+
+    <!-- Experience Section (compact preview) -->
+    <section id="experience" class="experience section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Experience</h2>
+        <p>Selected internships &amp; professional experience.</p>
+      </div>
+    
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-10">
+            <div class="experience-item p-4 rounded shadow-sm" role="button"
+                 data-bs-toggle="modal" data-bs-target="#experienceModal" style="cursor:pointer;">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <div>
+                  <h3 class="company fw-bold mb-1">Destini.ai</h3>
+                  <p class="mb-0"><strong>Full Stack Intern</strong></p>
+                  <small class="text-muted">Internship — (use real dates if you want)</small>
+                </div>
+                <div class="text-end">
+                  <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#experienceModal">
+                    View details
+                  </button>
+                </div>
+              </div>
+    
+              <p class="mb-0 text-muted">
+                Worked on frontend and backend features for the Destini.ai platform — click to view full details.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
@@ -254,6 +294,7 @@
       </div>
 
     </section><!-- /Skills Section -->
+    
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
