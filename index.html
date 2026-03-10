@@ -23,77 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- Custom styles for experience popup & blur -->
-  <style>
-    /* blur effect applied to page when popup open */
-    .blurred {
-      filter: blur(6px);
-      -webkit-filter: blur(6px);
-      transition: filter .18s ease;
-      pointer-events: none; /* prevents accidental clicks while modal open */
-      user-select: none;
-    }
-
-    /* make the bootstrap modal backdrop transparent (fallback) */
-    .modal-backdrop {
-      background: transparent !important;
-    }
-
-    /* custom popup appearance and responsive sizing */
-    #experienceModal .modal-dialog {
-      position: absolute; /* we'll set top/left via JS */
-      width: 360px;
-      max-width: calc(100vw - 20px);
-      margin: 0;
-      transform: none !important;
-      z-index: 1080;
-    }
-
-    #experienceModal .modal-content {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-    }
-
-    /* center fallback for small screens */
-    #experienceModal.centered {
-      left: 50% !important;
-      top: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      position: fixed !important;
-    }
-
-    /* Tweak close button visibility on small screens */
-    @media (max-width: 480px) {
-      #experienceModal .modal-dialog {
-        width: 92vw;
-        left: 4vw !important;
-        top: 20vh !important;
-        position: fixed !important;
-        transform: none !important;
-      }
-
-      .js-close-exp {
-        font-size: 1.1rem;
-      }
-    }
-
-    /* Visual hint: make profile img clickable and slightly lift on hover */
-    .profile-img img {
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .profile-img img:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Slight spacing for modal content */
-    #experienceModal .modal-body p {
-      margin-bottom: 0.75rem;
-    }
-  </style>
 </head>
 
 <body class="index-page">
@@ -104,20 +33,17 @@
     <!-- ID Card Section -->
     <div class="id-card mx-auto text-center p-4 rounded shadow">
       <div class="profile-img mb-3">
-        <img src="assets/img/Revanth Valluru profile.png" alt="ID photo of Revanth Valluru"
-          class="img-fluid rounded-circle border border-3 border-primary">
+        <img src="assets/img/Revanth Valluru profile.png"
+            alt="ID photo of Revanth Valluru"
+            class="img-fluid rounded-circle border border-3 border-primary">
       </div>
 
       <h2 class="name fw-bold mb-1">Revanth Valluru</h2><br>
       <div class="social-links text-center">
-        <a href="https://www.linkedin.com/in/sai-manikanta-revanth-valluru-a36198272/" class="linkedin" target="_blank"
-          rel="noopener"><i class="bi bi-linkedin"></i></a>
-        <a href="https://leetcode.com/u/revanthvalluru2073/" class="leetcode" target="_blank" rel="noopener"><i
-            class="fa-solid fa-code"></i></a>
-        <a href="https://github.com/revanthvalluru20?tab=repositories" class="github" target="_blank" rel="noopener"><i
-            class="bi bi-github"></i></a>
-        <a href="https://www.hackerrank.com/profile/saimanikantarev1" class="hackerrank" target="_blank"
-          rel="noopener"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="https://www.linkedin.com/in/sai-manikanta-revanth-valluru-a36198272/" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="https://leetcode.com/u/revanthvalluru2073/" class="leetcode" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i></a>
+        <a href="https://github.com/revanthvalluru20?tab=repositories" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://www.hackerrank.com/profile/saimanikantarev1" class="hackerrank" target="_blank" rel="noopener"><i class="fa-brands fa-hackerrank"></i></a>
       </div>
 
     </div>
@@ -129,8 +55,7 @@
 
         <!-- Experience: scroll to section instead of opening modal -->
         <li>
-          <a href="#experience" onclick="scrollToExperience(event)" class="nav-experience"><i
-              class="bi bi-briefcase navicon"></i> Experience</a>
+          <a href="#experience" onclick="scrollToExperience(event)" class="nav-experience"><i class="bi bi-briefcase navicon"></i> Experience</a>
         </li>
 
         <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
@@ -204,6 +129,12 @@
             </div>
             <p class="py-3">
               I am learning Web Development, Data Analytics, and Mobile App Development.
+              I completed my BTech in VIT-AP University With 8.45 CGPA.
+              I completed my Intermediate education at Narayana Junior College with 88.6%.
+              I also completed my 10th grade from the Narayana group, securing a 9.5 CGPA.
+              I am passionate about technology and continuously working to enhance my knowledge and skills.
+              Several Achievements apart my studies: 1 time Coding Quiz Winner, 1 time winner in quiz competition, 2 times runner-up in web development hackathons.
+              Participated in several sports like cricket, kabaddi, and badminton — Winner in cricket and kabaddi.
             </p>
           </div>
         </div>
@@ -222,26 +153,26 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-10">
-            <!-- shortened preview text; clicking opens popup near the profile photo -->
             <div class="experience-item p-4 rounded shadow-sm"
                  role="button"
+                 data-bs-toggle="modal"
+                 data-bs-target="#experienceModal"
                  style="cursor:pointer;">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <div>
                   <h3 class="company fw-bold mb-1">Destini.ai</h3>
                   <p class="mb-0"><strong>Full Stack Intern</strong></p>
-                  <small class="text-muted">Internship — Oct 2025 — Present</small>
+                  <small class="text-muted">Internship — add your start &amp; end dates</small>
                 </div>
                 <div class="text-end">
-                  <!-- we will handle opening; prevent default bootstrap modal behavior -->
-                  <button type="button" class="btn btn-sm btn-outline-primary" aria-label="Open experience details">
+                  <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#experienceModal" aria-label="Open experience details">
                     View details
                   </button>
                 </div>
               </div>
 
               <p class="mb-0 text-muted">
-                Built full-stack features for product and admin flows. Click for the highlight.
+                Contributed to frontend and backend features for the Destini.ai platform — click to open full internship details.
               </p>
             </div>
           </div>
@@ -254,7 +185,9 @@
 
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
-        <p>I am currently learning and gaining hands-on experience with Java, R, Data Visualization, and React.js. I'm working on mastering these skills as I continue my journey toward becoming a Full Stack Web Developer and Mobile Application Developer.</p>
+        <p>I am currently learning and gaining hands-on experience with Java, R, Data Visualization, and React.js. I'm working on mastering these skills as I continue my journey toward becoming a Full Stack Web Developer and Mobile Application Developer.
+
+          I'm also exploring the field of Data Analytics to better understand how to derive insights from data, and I’m interested in learning Artificial Intelligence to enhance my overall technical capabilities and build smarter solutions.</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -382,10 +315,8 @@
                 <div class="portfolio-info">
                   <h4>V-Connect</h4>
                   <p>A Social Media Application</p>
-                  <a href="#" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="https://v-connect-dnc1.onrender.com/" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+                  <a href="#" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://v-connect-dnc1.onrender.com/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
@@ -396,10 +327,8 @@
                 <div class="portfolio-info">
                   <h4>Fashion Store</h4>
                   <p>E-commerce Fashion Website</p>
-                  <a href="#" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="https://capable-dango-f8fc0e.netlify.app/" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+                  <a href="#" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://capable-dango-f8fc0e.netlify.app/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
@@ -410,10 +339,8 @@
                 <div class="portfolio-info">
                   <h4>Chess Game</h4>
                   <p>A Chess Game built with JavaScript — includes a bot opponent.</p>
-                  <a href="#" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="https://revanthvalluru20.github.io/chessgame2D/" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+                  <a href="#" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="https://revanthvalluru20.github.io/chessgame2D/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
@@ -424,10 +351,8 @@
                 <div class="portfolio-info">
                   <h4>Tasty Trail</h4>
                   <p>A Food delivery / Restaurant website</p>
-                  <a href="#" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
-                  <a href="http://tastytrailfood.ccbp.tech" title="More Details" class="details-link"><i
-                      class="bi bi-link-45deg"></i></a>
+                  <a href="#" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="http://tastytrailfood.ccbp.tech" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div>
@@ -438,8 +363,7 @@
                 <div class="portfolio-info">
                   <h4>Heart Diseases Analysis</h4>
                   <p>Dashboard & story built from a heart diseases dataset using Tableau.</p>
-                  <a href="#" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="#" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://public.tableau.com/app/profile/vishnupriya.pragada/viz/Dashboard_16989481972700/Dashboard1?publish=yes" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -450,8 +374,7 @@
                 <img src="assets/img/security.jpeg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Security Implementation for Automation (present)</h4>
-                  <a href="#" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="#" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -462,8 +385,7 @@
                 <img src="assets/img/NLP.webp" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Auto Paper Correction By NLP (Present)</h4>
-                  <a href="#" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i
-                      class="bi bi-zoom-in"></i></a>
+                  <a href="#" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://drive.google.com/file/d/1XVN2tq-D3dZLoWbzyf7_yws_F1uNUbhQ/view?usp=sharing" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -477,26 +399,33 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Experience Popup (short summary + 1 highlight) -->
-    <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true" data-bs-backdrop="false">
-      <div class="modal-dialog">
+    <!-- Experience Modal (fullscreen) -->
+    <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content">
           <div class="modal-header">
             <div>
               <h5 class="modal-title fw-bold" id="experienceModalLabel">Destini.ai — Full Stack Intern</h5>
               <small class="text-muted">Internship • Oct 2025 — Present</small>
             </div>
-            <button type="button" class="btn-close js-close-exp" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-
-          <div class="modal-body p-3">
-            <p class="mb-2 small">
-              Contributed end-to-end React frontend components and backend integrations for Destini.ai.
+    
+          <div class="modal-body overflow-auto p-4">
+            <h6 class="fw-semibold">Summary</h6>
+            <p class="mb-3">
+              Contributed to frontend and backend work to deliver product features and integrations.
             </p>
-
-            <ul class="mb-0">
-              <li><strong>Feature delivered:</strong> Implemented a secure payouts flow (request → validate → submit → status) with client-side validations and backend integration.</li>
+    
+            <h6 class="mt-3">Key feature delivered</h6>
+            <ul>
+              <li>Implemented a secure payouts flow (request → validate → submit → status) including client-side validation and backend integration.</li>
             </ul>
+          </div>
+    
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-primary" href="#portfolio" data-bs-dismiss="modal">See Projects</a>
           </div>
         </div>
       </div>
@@ -509,8 +438,7 @@
   </footer>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -543,130 +471,6 @@
         el.focus({ preventScroll: true });
       }, 450);
     }
-  </script>
-
-  <!-- Custom JS: anchor popup near profile image, blur background, mobile fallback -->
-  <script>
-    (function () {
-      const profileImg = document.querySelector('.profile-img img');
-      const experienceItems = document.querySelectorAll('.experience-item, .nav-experience, .btn-outline-primary');
-      const modal = document.getElementById('experienceModal');
-      const modalDialog = modal.querySelector('.modal-dialog');
-      const modalCloseBtns = modal.querySelectorAll('.js-close-exp, [data-bs-dismiss="modal"]');
-      const blurTargets = document.querySelectorAll('header, main, footer'); // elements to blur
-
-      function addBlur() {
-        blurTargets.forEach(el => el.classList.add('blurred'));
-        document.body.style.overflow = 'hidden';
-      }
-      function removeBlur() {
-        blurTargets.forEach(el => el.classList.remove('blurred'));
-        document.body.style.overflow = '';
-      }
-
-      function showPopupAt(x, y) {
-        // show modal (we won't use bootstrap.show to avoid default backdrop)
-        modal.style.display = 'block';
-        modal.classList.add('show');
-        // position modalDialog
-        modalDialog.style.left = x + 'px';
-        modalDialog.style.top = y + 'px';
-        modalDialog.classList.remove('centered');
-
-        // ensure modal fits in viewport: adjust if overflow
-        requestAnimationFrame(() => {
-          const rect = modalDialog.getBoundingClientRect();
-          const pad = 10;
-          let newLeft = rect.left;
-          let newTop = rect.top;
-
-          if (rect.right > window.innerWidth - pad) {
-            newLeft = Math.max(pad, window.innerWidth - rect.width - pad);
-          }
-          if (rect.left < pad) {
-            newLeft = pad;
-          }
-          if (rect.bottom > window.innerHeight - pad) {
-            // Not enough space below element — center instead
-            modalDialog.classList.add('centered');
-            modalDialog.style.left = '';
-            modalDialog.style.top = '';
-          } else {
-            modalDialog.style.left = newLeft + 'px';
-            modalDialog.style.top = newTop + 'px';
-          }
-        });
-
-        // move focus to close button for accessibility
-        const closeBtn = modal.querySelector('.js-close-exp');
-        if (closeBtn) closeBtn.focus({ preventScroll: true });
-
-        addBlur();
-      }
-
-      function openFromProfile() {
-        const r = profileImg.getBoundingClientRect();
-        const x = Math.round(r.left + window.scrollX);
-        const y = Math.round(r.bottom + window.scrollY + 10); // just below the image
-        showPopupAt(x, y);
-      }
-
-      function openFromElement(el) {
-        const r = el.getBoundingClientRect();
-        const x = Math.round(r.left + window.scrollX);
-        const y = Math.round(r.bottom + window.scrollY + 10);
-        showPopupAt(x, y);
-      }
-
-      function closePopup() {
-        modal.classList.remove('show');
-        modal.style.display = 'none';
-        modalDialog.classList.remove('centered');
-        modalDialog.style.left = '';
-        modalDialog.style.top = '';
-        removeBlur();
-      }
-
-      // Open when profile image clicked
-      if (profileImg) {
-        profileImg.style.cursor = 'pointer';
-        profileImg.addEventListener('click', openFromProfile);
-      }
-
-      // Also open when clicking the experience item or its "View details" button
-      experienceItems.forEach(el => {
-        el.addEventListener('click', (ev) => {
-          // if it's the nav "Experience" link, prevent its default scroll
-          if (ev && ev.preventDefault) ev.preventDefault();
-          // prefer to open near the clicked element if it has bounding rect
-          openFromElement(el);
-        });
-      });
-
-      // Close handlers
-      modalCloseBtns.forEach(btn => btn.addEventListener('click', closePopup));
-      // clicking outside modal-content closes it
-      modal.addEventListener('click', (ev) => {
-        if (ev.target === modal) closePopup();
-      });
-      // ESC key closes
-      document.addEventListener('keydown', (ev) => {
-        if (ev.key === 'Escape' && modal.classList.contains('show')) closePopup();
-      });
-
-      // ensure resize repositions or centers
-      window.addEventListener('resize', () => {
-        if (!modal.classList.contains('show')) return;
-        // at small widths center it
-        if (window.innerWidth < 500) {
-          modalDialog.classList.add('centered');
-          modalDialog.style.left = '';
-          modalDialog.style.top = '';
-        } else {
-          modalDialog.classList.remove('centered');
-        }
-      });
-    })();
   </script>
 
   <!-- Main JS File -->
