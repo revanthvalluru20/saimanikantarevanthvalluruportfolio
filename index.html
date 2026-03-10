@@ -9,8 +9,6 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -42,10 +40,10 @@
 
       <h2 class="name fw-bold mb-1">Revanth Valluru</h2><br>
       <div class="social-links text-center">
-        <a href="https://www.linkedin.com/in/sai-manikanta-revanth-valluru-a36198272/" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-        <a href="https://leetcode.com/u/revanthvalluru2073/" class="leetcode" target="_blank"><i class="fa-solid fa-code"></i></a>
-        <a href="https://github.com/revanthvalluru20?tab=repositories" class="github" target="_blank"><i class="bi bi-github"></i></a>
-        <a href="https://www.hackerrank.com/profile/saimanikantarev1" class="hackerrank" target="_blank"><i class="fa-brands fa-hackerrank"></i></a>
+        <a href="https://www.linkedin.com/in/sai-manikanta-revanth-valluru-a36198272/" class="linkedin" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="https://leetcode.com/u/revanthvalluru2073/" class="leetcode" target="_blank" rel="noopener"><i class="fa-solid fa-code"></i></a>
+        <a href="https://github.com/revanthvalluru20?tab=repositories" class="github" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://www.hackerrank.com/profile/saimanikantarev1" class="hackerrank" target="_blank" rel="noopener"><i class="fa-brands fa-hackerrank"></i></a>
       </div>
 
     </div>
@@ -54,12 +52,12 @@
       <ul>
         <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
         <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <!-- Experience: opens fullscreen modal -->
+
+        <!-- Experience: scroll to section instead of opening modal -->
         <li>
-          <a href="#experience" data-bs-toggle="modal" data-bs-target="#experienceModal">
-            <i class="bi bi-briefcase navicon"></i> Experience
-          </a>
+          <a href="#experience" onclick="scrollToExperience(event)" class="nav-experience"><i class="bi bi-briefcase navicon"></i> Experience</a>
         </li>
+
         <li><a href="#skills"><i class="bi bi-file-earmark-text navicon"></i> Skills</a></li>
         <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
       </ul>
@@ -71,7 +69,6 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero section dark-background">
-
       <img src="assets/img/homebg1.jpeg" alt="" data-aos="fade-in" class="">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -86,22 +83,21 @@
         <div class="hero-buttons">
           <a href="mailto:sairevanth.valluru@gmail.com" class="btn hire-btn">Hire Me!</a>
           <a href="#portfolio" class="btn portfolio-btn">Portfolio</a>
+          <!-- Experience button: smooth scroll to #experience -->
+          <button type="button" class="btn btn-outline-light" onclick="scrollToExperience()">Experience</button>
         </div>
         <!-- /Buttons Section -->
       </div>
 
     </section><!-- /Hero Section -->
 
-
-
     <!-- About Section -->
     <section id="about" class="about section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Hi, I'm Revanth, a Computer Science undergraduate passionate about web development. I enjoy building projects using the MERN stack, Python and Java, and I'm always eager to learn new technologies and improve my skills.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -133,12 +129,12 @@
             </div>
             <p class="py-3">
               I am learning Web Development, Data Analytics, and Mobile App Development.
-              I completed my BTech in VIT-AP University With 8.45 CGPA
+              I completed my BTech in VIT-AP University With 8.45 CGPA.
               I completed my Intermediate education at Narayana Junior College with 88.6%.
               I also completed my 10th grade from the Narayana group, securing a 9.5 CGPA.
               I am passionate about technology and continuously working to enhance my knowledge and skills.
-              Several Achievements apart my studies 1 time Coding Quiz Winner, 1 time winner in quiz competition, 2 times runner-up in web development hackathons.
-              Participated in several sports like cricket, kabaddi, and badminton, Winner in cricket and kabaddi
+              Several Achievements apart my studies: 1 time Coding Quiz Winner, 1 time winner in quiz competition, 2 times runner-up in web development hackathons.
+              Participated in several sports like cricket, kabaddi, and badminton — Winner in cricket and kabaddi.
             </p>
           </div>
         </div>
@@ -148,32 +144,35 @@
     </section><!-- /About Section -->
 
     <!-- Experience Section (compact preview) -->
-    <section id="experience" class="experience section light-background">
+    <section id="experience" class="experience section light-background" tabindex="-1">
       <div class="container section-title" data-aos="fade-up">
         <h2>Experience</h2>
         <p>Selected internships &amp; professional experience.</p>
       </div>
-    
+
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-10">
-            <div class="experience-item p-4 rounded shadow-sm" role="button"
-                 data-bs-toggle="modal" data-bs-target="#experienceModal" style="cursor:pointer;">
+            <div class="experience-item p-4 rounded shadow-sm"
+                 role="button"
+                 data-bs-toggle="modal"
+                 data-bs-target="#experienceModal"
+                 style="cursor:pointer;">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <div>
                   <h3 class="company fw-bold mb-1">Destini.ai</h3>
                   <p class="mb-0"><strong>Full Stack Intern</strong></p>
-                  <small class="text-muted">Internship — (use real dates if you want)</small>
+                  <small class="text-muted">Internship — add your start &amp; end dates</small>
                 </div>
                 <div class="text-end">
-                  <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#experienceModal">
+                  <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#experienceModal" aria-label="Open experience details">
                     View details
                   </button>
                 </div>
               </div>
-    
+
               <p class="mb-0 text-muted">
-                Worked on frontend and backend features for the Destini.ai platform — click to view full details.
+                Contributed to frontend and backend features for the Destini.ai platform — click to open full internship details.
               </p>
             </div>
           </div>
@@ -184,40 +183,38 @@
     <!-- Skills Section -->
     <section id="skills" class="skills section light-background">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Skills</h2>
         <p>I am currently learning and gaining hands-on experience with Java, R, Data Visualization, and React.js. I'm working on mastering these skills as I continue my journey toward becoming a Full Stack Web Developer and Mobile Application Developer.
 
           I'm also exploring the field of Data Analytics to better understand how to derive insights from data, and I’m interested in learning Artificial Intelligence to enhance my overall technical capabilities and build smarter solutions.</p>
-      </div><!-- End Section Title -->
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row skills-content skills-animation">
 
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>HTML</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>Mongodb</span> <i class="val">55%</i></span>
@@ -239,17 +236,15 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-
           </div>
 
           <div class="col-lg-6">
-
             <div class="progress">
               <span class="skill"><span>React Js</span> <i class="val">80%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>Node Js</span> <i class="val">40%</i></span>
@@ -270,23 +265,21 @@
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
               <span class="skill"><span>Python</span> <i class="val">75%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div><!-- End Skills Item -->
+            </div>
 
             <div class="progress">
-              <span class="skill"><span>MYSQL</span>
-              <i class="val">70%</i></span>
+              <span class="skill"><span>MYSQL</span> <i class="val">70%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -294,16 +287,14 @@
       </div>
 
     </section><!-- /Skills Section -->
-    
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio section light-background">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Projects</h2>
-        <p>I have done several projects on Web Development, Data Analytics  You can see them below</p>
-      </div><!-- End Section Title -->
+        <p>I have done several projects on Web Development, Data Analytics — you can see them below.</p>
+      </div>
 
       <div class="container">
 
@@ -314,7 +305,7 @@
             <li data-filter=".filter-app">Group</li>
             <li data-filter=".filter-product">Individual</li>
             <li data-filter=".filter-branding">Using AI</li>
-          </ul><!-- End Portfolio Filters -->
+          </ul>
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
@@ -328,7 +319,7 @@
                   <a href="https://v-connect-dnc1.onrender.com/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
@@ -340,54 +331,54 @@
                   <a href="https://capable-dango-f8fc0e.netlify.app/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
                 <img src="assets/img/chessgame1.webp" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Chess Game</h4>
-                  <p>A Chess Game by using Javascript a bot was implemented</p>
+                  <p>A Chess Game built with JavaScript — includes a bot opponent.</p>
                   <a href="#" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://revanthvalluru20.github.io/chessgame2D/" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <div class="portfolio-content h-100">
                 <img src="assets/img/Food-Delivery.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Tasty Trail</h4>
-                  <p>A Food delivery Restaurant website</p>
+                  <p>A Food delivery / Restaurant website</p>
                   <a href="#" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="http://tastytrailfood.ccbp.tech" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/heart.avif" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4>Heart Diseases Analysis</h4>
-                  <p>Created A DashBoard and Story for heart diseases through DataSet</p>
+                  <p>Dashboard & story built from a heart diseases dataset using Tableau.</p>
                   <a href="#" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="https://public.tableau.com/app/profile/vishnupriya.pragada/viz/Dashboard_16989481972700/Dashboard1?publish=yes" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
                 <img src="assets/img/security.jpeg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <h4>Security Implementation for Automation(present)</h4>
+                  <h4>Security Implementation for Automation (present)</h4>
                   <a href="#" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                   <a href="#" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding filter-app">
               <div class="portfolio-content h-100">
@@ -398,7 +389,7 @@
                   <a href="https://drive.google.com/file/d/1XVN2tq-D3dZLoWbzyf7_yws_F1uNUbhQ/view?usp=sharing" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
-            </div><!-- End Portfolio Item -->
+            </div>
 
           </div><!-- End Portfolio Container -->
 
@@ -407,6 +398,64 @@
       </div>
 
     </section><!-- /Portfolio Section -->
+
+    <!-- Experience Modal (fullscreen) -->
+    <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div>
+              <h5 class="modal-title fw-bold" id="experienceModalLabel">Destini.ai — Full Stack Intern</h5>
+              <small class="text-muted">Internship • add start — end dates</small>
+            </div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body overflow-auto p-4">
+            <h6 class="fw-semibold">Summary</h6>
+            <p>
+              As a Full Stack Intern at Destini.ai, I contributed to product-facing frontend components and backend integrations to deliver features for both end-users and enterprise clients. Work included building React components, integrating cloud services, implementing secure payment flows, and connecting admin tooling to APIs.
+            </p>
+
+            <h6 class="mt-3">Key responsibilities &amp; achievements</h6>
+            <ul>
+              <li><strong>Frontend:</strong> Implemented and refactored React.js components and application flows to improve UX, performance, and maintainability (state management, routing, lazy loading, form validation).</li>
+              <li><strong>Azure Translation Integration:</strong> Integrated Azure Translation services to enable multilingual UI/content. Implemented secure handling of service keys (server-side token exchange &amp; secrets management) and caching of translations for performance.</li>
+              <li><strong>Payout System:</strong> Implemented the payouts flow — created frontend screens for payout requests, integrated backend payout APIs, and added client-side validations and error-handling for financial transactions.</li>
+              <li><strong>Enterprise SSO:</strong> Integrated enterprise Single Sign-On (SSO) for corporate customers, working with SAML/OAuth endpoints and updating authentication flows to support SSO login and role-based access.</li>
+              <li><strong>Admin Panel:</strong> Built and connected the Admin Panel to backend REST APIs for user/product management, audit logs, and configuration controls. Implemented paginated lists, filters, bulk actions, and secure admin endpoints.</li>
+              <li><strong>API &amp; Backend Collaboration:</strong> Worked with backend engineers to define API contracts, wrote integration tests for endpoints used by the frontend, and helped debug issues across environments (local → staging → production).</li>
+              <li><strong>Dev Practices:</strong> Participated in code reviews, used Git feature branches and pull requests, and helped with CI/CD pipelines for staging deployments.</li>
+            </ul>
+
+            <h6 class="mt-3">Components &amp; application flows (examples)</h6>
+            <ul>
+              <li>Reusable input &amp; form components with validation (Formik-like patterns / custom hooks for handling form state).</li>
+              <li>Dashboard widgets — data fetching, optimistic updates, and client-side caching strategies.</li>
+              <li>Payout request flow: request form → validation → submit → status screen with polling for payout confirmation.</li>
+              <li>SSO flow: SSO button → redirect to identity provider → callback handling → token exchange and session creation.</li>
+              <li>Admin list flows: server-side pagination + client-side filters + bulk status updates with confirmation modals.</li>
+            </ul>
+
+            <h6 class="mt-3">Technologies</h6>
+            <p>React.js · JavaScript (ES6+) · Node.js · Express · MongoDB · Azure Translator API · SSO (SAML/OAuth) · REST APIs · Bootstrap · Git · CI/CD</p>
+
+            <h6 class="mt-3">Notes &amp; impact</h6>
+            <p>
+              The features delivered improved platform accessibility (multilingual support), added enterprise-ready auth (SSO), and enabled financial workflows (payout system) required by partners. The Admin Panel improvements reduced manual support effort and sped up content/product management.
+            </p>
+
+            <h6 class="mt-3">Export / Format</h6>
+            <p>If you'd like, I can convert this content into a printable resume block, timeline component, or export it as a PDF-friendly section — tell me which format you prefer.</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <a class="btn btn-primary" href="#portfolio" data-bs-dismiss="modal">See Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </main>
 
@@ -432,9 +481,29 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
+  <!-- Smooth-scroll to Experience -->
+  <script>
+    function scrollToExperience(e) {
+      if (e && e.preventDefault) e.preventDefault();
+      const el = document.getElementById('experience');
+      if (!el) return;
+
+      // Scroll smoothly
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Make element focusable for accessibility and focus it after scroll begins
+      setTimeout(() => {
+        el.setAttribute('tabindex', '-1');
+        el.focus({ preventScroll: true });
+      }, 450);
+    }
+  </script>
+
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
 </body>
+
+</html>
 
 </html>
