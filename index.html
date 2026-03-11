@@ -81,8 +81,8 @@
 
         <!-- Buttons Section -->
         <div class="hero-buttons">
-          <a href="mailto:sairevanth.valluru@gmail.com" class="btn hire-btn">Hire Me!</a>
-          <a href="#portfolio" class="btn portfolio-btn">Portfolio</a>
+          <a href="mailto:sairevanth.valluru@gmail.com" class="btn btn-outline-light">Hire Me!</a>
+          <a href="#portfolio" class="btn btn-outline-light">Portfolio</a>
           <!-- Experience button: smooth scroll to #experience -->
           <button type="button" class="btn btn-outline-light" onclick="scrollToExperience()">Experience</button>
         </div>
@@ -162,7 +162,7 @@
                 <div>
                   <h3 class="company fw-bold mb-1">Destini.ai</h3>
                   <p class="mb-0"><strong>Full Stack Intern</strong></p>
-                  <small class="text-muted">Internship — add your start &amp; end dates</small>
+                  <small class="text-muted">Internship — add start &amp; end dates</small>
                 </div>
                 <div class="text-end">
                   <button type="button" class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#experienceModal" aria-label="Open experience details">
@@ -399,7 +399,7 @@
 
     </section><!-- /Portfolio Section -->
 
-    <!-- Experience Modal (fullscreen) -->
+    <!-- Experience Modal (shortened description + one feature point) -->
     <div class="modal fade" id="experienceModal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-fullscreen">
         <div class="modal-content">
@@ -410,19 +410,19 @@
             </div>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-    
+
           <div class="modal-body overflow-auto p-4">
             <h6 class="fw-semibold">Summary</h6>
-            <p class="mb-3">
+            <p>
               Contributed to frontend and backend work to deliver product features and integrations.
             </p>
-    
+
             <h6 class="mt-3">Key feature delivered</h6>
             <ul>
-              <li>Implemented a secure payouts flow (request → validate → submit → status) including client-side validation and backend integration.</li>
+              <li>Implemented a secure payouts flow (request → validate → submit → status) with client-side validation and backend integration.</li>
             </ul>
           </div>
-    
+
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
             <a class="btn btn-primary" href="#portfolio" data-bs-dismiss="modal">See Projects</a>
@@ -477,5 +477,7 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+
+</html>
 
 </html>
