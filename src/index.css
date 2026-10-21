@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Design Tokens ───────────────────────────────────────── */
+:root {
+  color-scheme: light;
+  --bg-main: #F2F7FD;
+  --surface-white: #FFFFFF;
+  --surface-light-blue: #EFF8FF;
+  --primary-navy: #10233F;
+  --secondary-text: #526B8A;
+  --primary-accent: #087CF0;
+  --cyan-accent: #12B8F5;
+  --card-border: #D7EAF8;
+  --track-bg: #E2EAF3;
+  --shadow-cool: 0 4px 20px -2px rgba(8, 124, 240, 0.06), 0 2px 6px -1px rgba(16, 35, 63, 0.04);
+  --shadow-hover: 0 10px 25px -3px rgba(8, 124, 240, 0.12), 0 4px 10px -2px rgba(16, 35, 63, 0.06);
+}
+
+/* ─── Base Reset ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: auto; }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--bg-main);
+  color: var(--primary-navy);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', 'Inter', sans-serif;
+}
+
+/* ─── App Layout: Sidebar + Content ─────────────────────── */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  min-height: 100vh;
+}
+
+.app-root {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--bg-main);
+  /* Pure, smooth ethereal ice-blue gradient matching the mockup reference — NO dots! */
+  background-image:
+    radial-gradient(ellipse at 12% 18%, rgba(18, 184, 245, 0.12) 0%, transparent 48%),
+    radial-gradient(ellipse at 88% 75%, rgba(8, 124, 240, 0.10) 0%, transparent 52%),
+    linear-gradient(180deg, #F0F6FD 0%, #F5F9FE 50%, #EFF5FC 100%);
+  overflow-x: hidden;
+}
+
+/* Sidebar width: 68px on desktop, 56px on mobile */
+.sidebar-placeholder {
+  flex-shrink: 0;
+  width: 68px;
+}
+
+@media (max-width: 640px) {
+  .sidebar-placeholder {
+    width: 56px;
+  }
+}
+
+/* Main content area */
+.section-container {
+  flex: 1;
+  min-height: 100svh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ─── Common Section Titles ──────────────────────────────── */
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  .section-title h2 {
+    font-size: 2.35rem;
+  }
+}
+
+.section-title .accent-word {
+  color: var(--primary-accent);
+}
+
+.section-title-underline {
+  height: 4px;
+  width: 48px;
+  background: linear-gradient(90deg, #087CF0 0%, #12B8F5 100%);
+  border-radius: 9999px;
+  margin-top: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.section-title p {
+  color: var(--secondary-text);
+  font-size: 0.875rem;
+  margin: 0;
+  max-width: 40rem;
+  line-height: 1.6;
+}
+
+/* ─── White Cards ────────────────────────────────────────── */
+.white-card {
+  background: #FFFFFF;
+  border: 1px solid var(--card-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-cool);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.white-card:hover {
+  border-color: rgba(8, 124, 240, 0.4);
+  box-shadow: var(--shadow-hover);
+}
+
+/* ─── Next Section Button ────────────────────────────────── */
+.next-section-btn {
+  position: fixed;
+  bottom: 1.25rem;
+  left: calc(68px + (100% - 68px) / 2);
+  transform: translateX(-50%);
+  z-index: 40;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: #FFFFFF;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 2px 8px rgba(8, 124, 240, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-accent);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+@media (max-width: 640px) {
+  .next-section-btn {
+    left: calc(56px + (100% - 56px) / 2);
+  }
+}
+
+.next-section-btn:hover {
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #087CF0 0%, #12B8F5 100%);
+  border-color: #087CF0;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 16px rgba(8, 124, 240, 0.28);
+}
+
+.next-section-btn:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* ─── Utility ────────────────────────────────────────────── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
