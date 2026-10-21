@@ -3,7 +3,7 @@ A personal portfolio website showcasing my skills, selected projects, and softwa
 Live Website
 Once GitHub Pages deployment is enabled, the website will be available at:
 
-https://revanthvalluru20.github.io/revanth-portfolio-redesigned/
+https://revanthvalluru20.github.io/saimanikantarevanthvalluruportfolio/
 If your GitHub repository has a different name, update the URL above and the base value in vite.config.ts to match it.
 
 Tech Stack
