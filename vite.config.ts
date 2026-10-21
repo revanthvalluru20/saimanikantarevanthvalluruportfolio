@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -8,5 +9,5 @@ export default defineConfig({
     port: 3000,
     open: false,
   },
-  base: './', // Allow easy static deployment on GitHub Pages or Vercel
+  base: '/saimanikantarevanthvalluruportfolio/',
 });
