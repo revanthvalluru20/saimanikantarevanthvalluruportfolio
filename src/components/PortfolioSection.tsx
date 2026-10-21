@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Code2, Sparkles, BarChart3, Layout } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface ProjectItem {
   id: string;
@@ -195,7 +196,7 @@ export const PortfolioSection: React.FC = () => {
                 {/* Image Container with Badges */}
                 <div className="relative aspect-[16/7.5] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-[#D7EAF8]/80">
                   <img
-                    src={project.image}
+                    src={getAssetUrl(project.image)}
                     alt={project.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                   />

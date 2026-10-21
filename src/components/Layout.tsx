@@ -5,6 +5,7 @@ import { RevaAI } from './RevaAI';
 import { useCardWorkspace } from '../context/CardWorkspaceContext';
 import { Shield } from 'lucide-react';
 import { profileData } from '../data/profile';
+import { getAssetUrl } from '../utils/assetUrl';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 import { useSpeechSynthesis } from '../hooks/useSpeechSynthesis';
 import { assistantEngine } from '../services/assistantEngine';
@@ -190,7 +191,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         {/* BACKGROUND: Preserved homebg1.jpeg with light overlay */}
         <div className="fixed inset-0 -z-20 overflow-hidden pointer-events-none">
           <img
-            src="/assets/img/homebg1.jpeg"
+            src={getAssetUrl('assets/img/homebg1.jpeg')}
             alt="Developer workspace background"
             className="w-full h-full object-cover object-center filter brightness-[0.28] saturate-50 blur-[1px]"
           />

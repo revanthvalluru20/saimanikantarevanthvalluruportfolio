@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Folder, GraduationCap, Code2, Zap, ArrowRight } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface HeroSectionProps {
   onNavigate: (sectionId: string) => void;
@@ -225,13 +226,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
             }}
           >
             <img
-              src="/assets/img/revanth-hero-showcase.jpg"
+              src={getAssetUrl('assets/img/revanth-hero-showcase.jpg')}
               alt="Revanth Valluru - Full Stack Developer"
               className="w-full h-auto object-contain"
               style={{ mixBlendMode: 'multiply' }}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = '/assets/img/Revanth Valluru profile.png';
+                target.src = getAssetUrl('assets/img/Revanth Valluru profile.png');
               }}
             />
           </div>

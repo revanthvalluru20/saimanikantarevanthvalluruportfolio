@@ -1,4 +1,5 @@
 import { Project } from '../types/portfolio';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const projectsData: Project[] = [
   {
@@ -35,7 +36,7 @@ export const projectsData: Project[] = [
     ],
     githubUrl: "https://github.com/revanthvalluru20",
     liveDemoUrl: "https://vibe-verse-rho.vercel.app/home",
-    image: "/assets/img/vibeverse.jpg",
+    image: getAssetUrl("assets/img/vibeverse.jpg"),
     hasArchitecture: true,
     relatedQuestions: [
       "Explain VibeVerse.",
@@ -79,7 +80,7 @@ export const projectsData: Project[] = [
     ],
     githubUrl: "https://github.com/revanthvalluru20",
     liveDemoUrl: "https://mentor-ai-one-swart.vercel.app/workspace",
-    image: "/assets/img/mentorai.jpg",
+    image: getAssetUrl("assets/img/mentorai.jpg"),
     hasArchitecture: true,
     relatedQuestions: [
       "Explain MentorAI-CodeSpace.",
@@ -111,7 +112,7 @@ export const projectsData: Project[] = [
       "Designed and published interactive Tableau dashboards and visual stories."
     ],
     liveDemoUrl: "https://public.tableau.com/app/profile/vishnupriya.pragada/viz/Dashboard_16989481972700/Dashboard1?publish=yes",
-    image: "/assets/img/heart.avif",
+    image: getAssetUrl("assets/img/heart.avif"),
     hasArchitecture: false,
     relatedQuestions: [
       "Show my cardiovascular analytics dashboard.",
@@ -143,7 +144,7 @@ export const projectsData: Project[] = [
     ],
     githubUrl: "https://github.com/revanthvalluru20/chessgame2D",
     liveDemoUrl: "https://revanthvalluru20.github.io/chessgame2D/",
-    image: "/assets/img/chessgame1.webp",
+    image: getAssetUrl("assets/img/chessgame1.webp"),
     hasArchitecture: true,
     relatedQuestions: [
       "Explain my chess game.",
@@ -172,7 +173,7 @@ export const projectsData: Project[] = [
       "Integrated REST API endpoints to fetch live restaurant listings and menu datasets."
     ],
     liveDemoUrl: "http://tastytrailfood.ccbp.tech",
-    image: "/assets/img/Food-Delivery.jpg",
+    image: getAssetUrl("assets/img/Food-Delivery.jpg"),
     hasArchitecture: false,
     relatedQuestions: [
       "Tell me about Tasty Trail.",
@@ -201,7 +202,7 @@ export const projectsData: Project[] = [
       "Implemented cosine similarity and semantic matching algorithms against benchmark answer keys."
     ],
     liveDemoUrl: "https://drive.google.com/file/d/1XVN2tq-D3dZLoWbzyf7_yws_F1uNUbhQ/view",
-    image: "/assets/img/autopaper.jpg",
+    image: getAssetUrl("assets/img/autopaper.jpg"),
     hasArchitecture: false,
     relatedQuestions: [
       "Explain my NLP paper correction project.",
@@ -238,7 +239,7 @@ export const projectsData: Project[] = [
     ],
     githubUrl: "https://github.com/revanthvalluru20",
     liveDemoUrl: "https://v-connect-dnc1.onrender.com/",
-    image: "/assets/img/vconnect.jpg",
+    image: getAssetUrl("assets/img/vconnect.jpg"),
     hasArchitecture: false,
     relatedQuestions: [
       "Explain V-Connect.",

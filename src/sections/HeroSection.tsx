@@ -1,6 +1,7 @@
 import React from 'react';
 import { Volume2, Sparkles, Terminal, ChevronDown, Layout, Server, Layers, GitBranch } from 'lucide-react';
 import { profileData } from '../data/profile';
+import { getAssetUrl } from '../utils/assetUrl';
 import { AICore } from '../components/AICore';
 import { VoiceControls } from '../components/VoiceControls';
 import { ChatPanel } from '../components/ChatPanel';
@@ -70,7 +71,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Preserved Authentic Hero Background Image: assets/img/homebg1.jpeg */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none rounded-3xl">
         <img
-          src="/assets/img/homebg1.jpeg"
+          src={getAssetUrl('assets/img/homebg1.jpeg')}
           alt="Developer workspace background"
           className="w-full h-full object-cover object-center filter brightness-[0.35] contrast-115 scale-105"
         />

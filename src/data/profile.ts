@@ -1,3 +1,5 @@
+import { getAssetUrl } from '../utils/assetUrl';
+
 export const profileData = {
   fullName: "Valluru Sai Manikanta Revanth",
   shortName: "Sai Manikanta Revanth",
@@ -11,7 +13,7 @@ export const profileData = {
   location: "Vijayawada, India",
   email: "revanthvalluru2073@gmail.com",
   phone: "+91 8790515520",
-  profileImage: "/assets/img/Revanth Valluru profile.png",
+  profileImage: getAssetUrl("assets/img/Revanth Valluru profile.png"),
   socials: {
     github: "https://github.com/revanthvalluru20",
     linkedin: "https://www.linkedin.com/in/sai-manikanta-revanth-valluru-a36198272/",

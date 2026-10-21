@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node dependencies
+node_modules/
+
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Backup & scratch
+src_backup_turn10/
+
+# OS and Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -4,6 +4,7 @@ import {
   Home, User, Briefcase, FileText, Image, Mail, Award,
   Menu, X, Github, Linkedin, Code, Terminal
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface NavDrawerProps {
   activeSection: string;
@@ -136,11 +137,11 @@ export const NavDrawer: React.FC<NavDrawerProps> = ({ activeSection, onNavigate 
             <div className="drawer-profile">
               <div className="drawer-avatar-ring">
                 <img
-                  src="/assets/img/Revanth Valluru profile.png"
+                  src={getAssetUrl('assets/img/Revanth Valluru profile.png')}
                   alt="Valluru Sai Manikanta Revanth"
                   className="drawer-avatar"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = 'assets/img/Revanth Valluru profile.png';
+                    (e.target as HTMLImageElement).src = getAssetUrl('assets/img/Revanth Valluru.jpg');
                   }}
                 />
               </div>

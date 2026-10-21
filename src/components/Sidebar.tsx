@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Home, User, Briefcase, FileText, Image, Mail, Award, Menu, X, Github, Linkedin, Code } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 interface SidebarProps {
   activeSection: string;
@@ -75,11 +76,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeSection, onNavigate }) =
           <div className="text-center pt-2 pb-5">
             <div className="relative mx-auto w-[120px] h-[120px] mb-3">
               <img
-                src="assets/img/Revanth Valluru profile.png"
+                src={getAssetUrl('assets/img/Revanth Valluru profile.png')}
                 alt="ID photo of Valluru Sai Manikanta Revanth"
                 className="w-full h-full object-cover rounded-full border-8 border-[#2c2f3f] shadow-md hover:border-[#149ddd] transition-colors duration-300"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = '/assets/img/Revanth Valluru profile.png';
+                  (e.target as HTMLImageElement).src = getAssetUrl('assets/img/Revanth Valluru.jpg');
                 }}
               />
             </div>

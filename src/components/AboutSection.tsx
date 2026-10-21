@@ -4,6 +4,7 @@ import {
   GraduationCap, MapPin, Mail, Phone,
   UserCheck, School, Building2, Linkedin, ExternalLink,
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export const AboutSection: React.FC = () => {
   const quickDetails = [
@@ -81,11 +82,11 @@ export const AboutSection: React.FC = () => {
             <div className="lg:col-span-3 flex justify-center lg:justify-start">
               <div className="w-28 sm:w-36 lg:w-40 aspect-[3/4] rounded-2xl overflow-hidden border-2 border-[#D7EAF8] shadow-md bg-slate-100 flex-shrink-0">
                 <img
-                  src="/assets/img/Revanth Valluru profile.png"
+                  src={getAssetUrl('assets/img/Revanth Valluru profile.png')}
                   alt="Revanth Valluru"
                   className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = '/assets/img/Revanth Valluru.jpg';
+                    (e.target as HTMLImageElement).src = getAssetUrl('assets/img/Revanth Valluru.jpg');
                   }}
                 />
               </div>

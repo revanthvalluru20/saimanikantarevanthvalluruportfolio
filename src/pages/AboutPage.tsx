@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { User, MapPin, Mail, Phone, GraduationCap, Award, ExternalLink, ShieldCheck, Terminal } from 'lucide-react';
 import { profileData } from '../data/profile';
+import { getAssetUrl } from '../utils/assetUrl';
 import { certificationsData } from '../data/experience';
 import { AdaptiveCard } from '../components/AdaptiveCard';
 import { HUDLabel } from '../components/HUDLabel';
@@ -55,7 +56,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
             summaryContent={
               <div className="flex items-center gap-3">
                 <img
-                  src="/assets/img/Revanth Valluru profile.png"
+                  src={getAssetUrl('assets/img/Revanth Valluru profile.png')}
                   alt={profileData.fullName}
                   className="w-12 h-12 rounded-xl object-cover border border-cyan-400/50"
                 />
@@ -72,7 +73,7 @@ export const AboutPage: React.FC<AboutPageProps> = () => {
                 <div className="absolute -inset-1.5 rounded-2xl bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-600 opacity-70 blur-md animate-pulse" />
                 <div className="relative w-full h-full rounded-2xl p-1 bg-slate-950/90 border-2 border-cyan-400/60 overflow-hidden shadow-[0_0_25px_rgba(0,240,255,0.3)]">
                   <img
-                    src="/assets/img/Revanth Valluru profile.png"
+                    src={getAssetUrl('assets/img/Revanth Valluru profile.png')}
                     alt={profileData.fullName}
                     className="w-full h-full object-cover object-center rounded-xl bg-slate-900"
                   />
